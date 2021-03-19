@@ -13,9 +13,13 @@ The "/outputs" folder contains the predictions obtained for each version of the 
 
 ### Version 1
 All the categorical features are processed with the one-hot encoding and the missing values are managed. 
-Four (4) different binary classifier are tested and the best one is selected to predict th test labels. 
-Results are BAD.
+Four different binary classifier are tested and the best one is selected to predict th test labels. 
+Results are not very good: accuracy of ~83% on training set (obtained with random forest) ~63% on test set(assigned by kaggle).
 
-### Version 2
+### Version 2 (Starting from version 1)
 Family member counter features are replaced by a unique global counter and an "is alone" flag feature. Moreover the lenght of name feature is added.
-Results are better but still BAD.
+Results are worse: accuracy of ~83% on training set (obtained with random forest) ~56% on test set (assigned by kaggle).
+
+### Version 3 (Starting from version 2)
+Each subset of feature obtained with a one-hot representation is replaced with a single categorical feature (from 0 to N) in order to reduce the dimensionality. 
+Results are now good: accuracy of ~83% on training set (obtained with random forest) ~77% on test set (assigned by kaggle).
